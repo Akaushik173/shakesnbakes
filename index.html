@@ -17,7 +17,7 @@
       padding: 20px;
       text-align: center;
       color: white;
-      font-size: 2em;
+      font-size: 2.5em;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       position: sticky;
       top: 0;
@@ -27,159 +27,169 @@
       display: flex;
       justify-content: center;
       background: #ffe4e1;
-      padding: 10px;
-      gap: 20px;
-      position: sticky;
-      top: 64px;
-      z-index: 999;
+      padding: 10px 0;
+      gap: 30px;
+      font-weight: bold;
+      font-size: 1.2em;
     }
     nav a {
       color: #c71585;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2em;
-      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     nav a:hover {
       text-decoration: underline;
     }
+    nav a .home-icon {
+      width: 22px;
+      height: 22px;
+      filter: invert(35%) sepia(72%) saturate(5347%) hue-rotate(315deg) brightness(102%) contrast(104%);
+    }
     section {
       padding: 60px 20px;
-      max-width: 700px;
-      margin: auto;
+      max-width: 900px;
+      margin: 0 auto;
       text-align: center;
     }
     section h2 {
       color: #ff1493;
-      font-size: 2em;
       margin-bottom: 20px;
-    }
-    section p {
-      font-size: 1.2em;
-      line-height: 1.5;
+      font-size: 2em;
     }
     .chef-img {
       width: 180px;
       border-radius: 50%;
       border: 5px dotted #ff69b4;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+    }
+    .menu-item {
+      background: #ffe4e1;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 10px auto;
+      max-width: 600px;
+      box-shadow: 2px 2px 8px rgba(255, 105, 180, 0.3);
+    }
+    .menu-item img {
+      width: 100px;
+      border-radius: 10px;
+      margin-right: 15px;
+      vertical-align: middle;
+    }
+    .menu-item span {
+      vertical-align: middle;
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #c71585;
     }
     footer {
       background-color: #ff69b4;
       color: white;
       text-align: center;
-      padding: 10px;
+      padding: 12px;
       font-size: 0.9em;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-    ul.menu-list, ul.price-list {
-      list-style: none;
-      padding: 0;
-      text-align: left;
-      max-width: 400px;
-      margin: 10px auto;
-      font-size: 1.1em;
-    }
-    ul.menu-list li, ul.price-list li {
-      margin: 8px 0;
-    }
-    input, textarea {
-      width: 100%;
-      max-width: 400px;
-      padding: 8px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      font-size: 1em;
-    }
-    button {
-      background-color: #ff69b4;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1.1em;
-      cursor: pointer;
-      border-radius: 5px;
-      margin-top: 10px;
-      transition: background-color 0.3s;
-    }
-    button:hover {
-      background-color: #c71585;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <header>
+  <header id="home">
     🌟 Shakes 'n' Bakes 🌟
   </header>
+
   <nav>
-    <a href="#home">Home</a>
-    <a href="#menu">Menu</a>
-    <a href="#price">Price</a>
-    <a href="#contact">Contact</a>
-    <a href="#suggestion">Suggestion</a>
+    <a href="#home" title="Home">
+      <img class="home-icon" src="https://cdn-icons-png.flaticon.com/512/1946/1946436.png" alt="Home" />
+      Home
+    </a>
+    <a href="#menu" title="Menu">Menu</a>
+    <a href="#price" title="Price">Price</a>
+    <a href="#contact" title="Contact">Contact</a>
+    <a href="#suggestion" title="Suggestion">Suggestion</a>
   </nav>
 
   <section id="home">
-    <img 
-      src="https://i.imgur.com/OuFzO3F.png" 
-      alt="Cute cartoon chef" 
+    <img
+      src="https://cdn.pixabay.com/photo/2016/03/31/18/55/cooking-1296206_960_720.png"
+      alt="Cute cartoon chef"
       class="chef-img"
     />
     <h2>Welcome to Shakes 'n' Bakes!</h2>
     <p>
-      Your one-stop shop for delicious snacks, pastries, Chinese food like chowmein, pizza, pasta, and healthy options! 
-      We serve everything with a sprinkle of fun and lots of love.  
-      <br /><br />
-      Proudly owned and created by <strong>Akshara Kaushik</strong>.
+      Your favorite spot for delicious snacks, pastries, Chinese treats like chowmein, pizzas, pasta, and healthy options — all with a fun, cartoon vibe!
     </p>
+    <p><strong>Owned and created by Akshara Kaushik</strong></p>
   </section>
 
   <section id="menu">
     <h2>Our Menu</h2>
-    <ul class="menu-list">
-      <li>Snacks: Crispy fries, Nachos, Cheese Balls</li>
-      <li>Pastries: Chocolate Eclairs, Strawberry Tarts, Blueberry Muffins</li>
-      <li>Chinese: Veg Chowmein, Manchurian, Spring Rolls</li>
-      <li>Italian: Classic Pizza, Spaghetti Pasta, Garlic Bread</li>
-      <li>Healthy: Fresh Salads, Fruit Bowls, Smoothie Bowls</li>
-    </ul>
+    <div class="menu-item">
+      <img src="https://cdn.pixabay.com/photo/2017/05/07/08/56/pizza-2290425_960_720.png" alt="Pizza" />
+      <span>Pizza - Classic & Veggie</span>
+    </div>
+    <div class="menu-item">
+      <img src="https://cdn.pixabay.com/photo/2016/11/29/04/27/noodles-1868728_960_720.png" alt="Chowmein" />
+      <span>Chinese Chowmein</span>
+    </div>
+    <div class="menu-item">
+      <img src="https://cdn.pixabay.com/photo/2018/01/15/07/51/pasta-3082831_960_720.png" alt="Pasta" />
+      <span>Delicious Pasta</span>
+    </div>
+    <div class="menu-item">
+      <img src="https://cdn.pixabay.com/photo/2017/01/30/14/32/cupcake-2025050_960_720.png" alt="Pastries" />
+      <span>Fresh Pastries & Cupcakes</span>
+    </div>
+    <div class="menu-item">
+      <img src="https://cdn.pixabay.com/photo/2017/06/02/18/24/salad-2368679_960_720.png" alt="Healthy Food" />
+      <span>Healthy Bites & Salads</span>
+    </div>
   </section>
 
   <section id="price">
     <h2>Price List</h2>
-    <ul class="price-list">
-      <li>Snacks: ₹50 - ₹120</li>
-      <li>Pastries: ₹80 - ₹150</li>
-      <li>Chinese Dishes: ₹100 - ₹180</li>
-      <li>Italian Specialties: ₹150 - ₹250</li>
-      <li>Healthy Choices: ₹90 - ₹140</li>
+    <p>All items priced affordably to suit every budget.</p>
+    <ul style="list-style:none; padding:0; font-size:1.1em; color:#c71585;">
+      <li>Pizza: ₹150 - ₹250</li>
+      <li>Chowmein: ₹100 - ₹180</li>
+      <li>Pasta: ₹130 - ₹220</li>
+      <li>Pastries & Cupcakes: ₹50 - ₹120</li>
+      <li>Healthy Salads: ₹80 - ₹160</li>
     </ul>
   </section>
 
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Have questions or want to place an order? Reach out!</p>
     <p>Email: shakesnbakes@example.com</p>
     <p>Phone: +91 98765 43210</p>
+    <p>Address: 123 Tasty Lane, Food City</p>
   </section>
 
   <section id="suggestion">
     <h2>Suggestions</h2>
-    <p>We love to hear from you! Share your feedback or ideas below:</p>
-    <form onsubmit="alert('Thank you for your suggestion!'); return false;">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
+    <p>We'd love to hear your thoughts and ideas! Please email us or drop a message.</p>
+    <form style="max-width: 400px; margin: 0 auto; text-align: left;">
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" required style="width: 100%; padding: 6px; margin-bottom: 10px;" /><br />
+
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message" rows="4" required style="width: 100%; padding: 6px;"></textarea><br /><br />
+
+      <button type="submit" style="
+        background-color: #ff69b4; 
+        border: none; 
+        color: white; 
+        padding: 10px 20px; 
+        font-size: 1em; 
+        border-radius: 6px;
+        cursor: pointer;
+      ">Send</button>
     </form>
   </section>
 
   <footer>
-    &copy; 2025 Shakes 'n' Bakes | Created with love for school project by Akshara Kaushik 🌺
+    &copy; 2025 Shakes 'n' Bakes | Created with 💖 by Akshara Kaushik for School Project
   </footer>
 </body>
 </html>
