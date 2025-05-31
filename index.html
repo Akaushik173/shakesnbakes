@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shakes 'n' Bakes</title>
   <style>
     body {
@@ -10,6 +10,7 @@
       font-family: 'Comic Sans MS', cursive, sans-serif;
       background: #fff0f5;
       color: #333;
+      scroll-behavior: smooth;
     }
     header {
       background-color: #ff69b4;
@@ -17,7 +18,10 @@
       text-align: center;
       color: white;
       font-size: 2em;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav {
       display: flex;
@@ -25,33 +29,123 @@
       background: #ffe4e1;
       padding: 10px;
       gap: 20px;
+      position: sticky;
+      top: 68px; /* header height + some margin */
+      z-index: 1000;
     }
     nav a {
       color: #c71585;
       text-decoration: none;
       font-weight: bold;
       font-size: 1.2em;
+      padding: 8px 15px;
+      border-radius: 15px;
+      transition: background-color 0.3s, color 0.3s;
     }
     nav a:hover {
-      text-decoration: underline;
+      text-decoration: none;
+      background-color: #ff1493;
+      color: white;
     }
     .main {
       text-align: center;
-      padding: 40px 20px;
+      padding: 40px 20px 60px;
     }
     .main img {
       width: 200px;
       border-radius: 50%;
       border: 5px dotted #ff69b4;
+      margin-bottom: 20px;
     }
     .main h2 {
       font-size: 1.8em;
       color: #ff1493;
+      margin-bottom: 10px;
     }
     .main p {
       font-size: 1.2em;
       max-width: 600px;
-      margin: 20px auto;
+      margin: 0 auto 40px;
+    }
+    section {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 15px rgba(255, 105, 180, 0.3);
+      background: linear-gradient(135deg, #ffe4e1 0%, #ffb6c1 100%);
+    }
+    section h3 {
+      color: #c71585;
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 25px;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px #fff;
+    }
+    .item-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+    .item {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(255, 105, 180, 0.25);
+      width: 220px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .item:hover {
+      transform: scale(1.05);
+    }
+    .item img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 10px;
+    }
+    .item h4 {
+      margin: 10px 0 5px;
+      color: #ff1493;
+    }
+    .price-list {
+      max-width: 400px;
+      margin: 0 auto;
+      font-size: 1.1em;
+      color: #800040;
+    }
+    .price-list li {
+      margin: 12px 0;
+      border-bottom: 1px dashed #ff69b4;
+      padding-bottom: 5px;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 10px;
+      border-radius: 12px;
+      border: 2px solid #ff69b4;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-size: 1em;
+      resize: vertical;
+    }
+    input[type="submit"] {
+      background-color: #ff1493;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    input[type="submit"]:hover {
+      background-color: #c71585;
     }
     footer {
       background-color: #ff69b4;
@@ -66,21 +160,87 @@
   </style>
 </head>
 <body>
-  <header>
-    🌟 Shakes 'n' Bakes 🌟
-  </header>
+  <header>🌟 Shakes 'n' Bakes 🌟</header>
+
   <nav>
     <a href="#menu">Menu</a>
     <a href="#price">Price</a>
     <a href="#contact">Contact</a>
     <a href="#suggestion">Suggestion</a>
   </nav>
+
   <div class="main">
-    <img src="https://i.pinimg.com/originals/16/f6/08/16f608d65070a1cb4acb1397edc8ed43.png" alt="Strawberry Shortcake Chef">
+    <img src="https://i.pinimg.com/originals/16/f6/08/16f608d65070a1cb4acb1397edc8ed43.png" alt="Strawberry Shortcake Chef" />
     <h2>Welcome to Shakes 'n' Bakes!</h2>
-    <p>We're your go-to place for yummy snacks, pastries, chowmein, pizza, pasta, and healthy bites — all served with love and a dash of cartoon magic! 
-    This project is proudly presented by <strong>Akshara Kaushik</strong>.</p>
+    <p>
+      We're your go-to place for yummy snacks, pastries, chowmein, pizza, pasta, and healthy bites — all served
+      with love and a dash of cartoon magic!
+      <br />
+      This project is proudly presented by <strong>Akshara Kaushik</strong>.
+    </p>
   </div>
+
+  <section id="menu">
+    <h3>Our Menu 🍰🍕🥗</h3>
+    <div class="item-grid">
+      <div class="item">
+        <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="Snacks" />
+        <h4>Snacks</h4>
+        <p>Delicious samosas, spring rolls, and crispy fries to satisfy your cravings.</p>
+      </div>
+      <div class="item">
+        <img src="https://cdn-icons-png.flaticon.com/512/1404/1404945.png" alt="Pastries" />
+        <h4>Pastries</h4>
+        <p>Freshly baked croissants, cupcakes, and tarts bursting with flavor.</p>
+      </div>
+      <div class="item">
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Chinese Food" />
+        <h4>Chinese Food</h4>
+        <p>Classic chowmein, Manchurian, and fried rice made just the way you love it.</p>
+      </div>
+      <div class="item">
+        <img src="https://cdn-icons-png.flaticon.com/512/3075/3075978.png" alt="Pizza" />
+        <h4>Pizza & Pasta</h4>
+        <p>Cheesy pizzas and creamy pasta dishes fresh from the oven.</p>
+      </div>
+      <div class="item">
+        <img src="https://cdn-icons-png.flaticon.com/512/4146/4146641.png" alt="Healthy Items" />
+        <h4>Healthy Items</h4>
+        <p>Salads, smoothies, and wholesome snacks to keep you fit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="price">
+    <h3>Price List 💰</h3>
+    <ul class="price-list">
+      <li>Snacks - ₹50 to ₹150</li>
+      <li>Pastries - ₹80 to ₹200</li>
+      <li>Chinese Food - ₹120 to ₹300</li>
+      <li>Pizza & Pasta - ₹200 to ₹500</li>
+      <li>Healthy Items - ₹100 to ₹250</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h3>Contact Us 📞</h3>
+    <p style="text-align:center; font-size:1.1em;">
+      Phone: +91 98765 43210<br />
+      Email: shakesnbakes@example.com<br />
+      Address: 123 Sweet Street, Dessert City, India
+    </p>
+  </section>
+
+  <section id="suggestion">
+    <h3>Suggestion Box ✉️</h3>
+    <form onsubmit="alert('Thank you for your suggestion!'); return false;">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="suggestion" rows="4" placeholder="Your Suggestion" required></textarea>
+      <input type="submit" value="Send" />
+    </form>
+  </section>
+
   <footer>
     &copy; 2025 Shakes 'n' Bakes | Created with love for school project by Akshara Kaushik 🌺
   </footer>
